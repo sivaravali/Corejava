@@ -1,25 +1,34 @@
 package Assignment;
 import java.util.Scanner;
-public class CaluculateAge {
-	static double calculateAge(int birthYear, int birthMonth) {
-		double age = 2022 - birthYear;
-		double age1 = (12 * age + birthMonth) / 12;
-		if (birthYear < 1 || birthMonth < 1) {
-			return 1.0;
-		} else if (birthYear > 2022 && birthMonth > 6) {
-			return 2.0;
-		} else {
-			return age1;
-		}
+
+public class CalculateAge {
+
+	static int birthMonth, birthYear;
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Find your Age");
+		System.out.println("Enter your Birth Month in Number Format");
+		birthMonth = scan.nextInt();
+		System.out.println("Enter your Birth Year in Number Format");
+		birthYear = scan.nextInt();
+		if (birthMonth < 1 || birthYear < 1)
+			System.out.println("-1.0 ");
+		else if (birthMonth > 12 || birthYear > 2022||calculateAge(birthMonth, birthYear)<1)
+			System.out.println("-2.0");
+
+		else
+			System.out.println("Your age is=" + calculateAge(birthMonth, birthYear));
+		scan.close();
 	}
-	public static void main(String args[]) {
-		double birthYear, birthMonth;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Birth Year :");
-		birthYear = sc.nextDouble();
-		System.out.println("Enter Birth month");
-		birthMonth = sc.nextDouble();
-		System.out.printf("%.2f"+calculateAge((int)birthYear, (int)birthMonth));
-		sc.close();
+
+	public static double calculateAge(int birthMonth, int birthYear) {
+		double x=birthMonth, y=birthYear;
+		double a, b, c,currentYear=2022,noOfMonths=12,currentMonth=6;
+		a = x / noOfMonths;
+		b = currentYear+(currentMonth/noOfMonths) - y;
+		c = b - a;
+		return c;
 	}
+
 }
