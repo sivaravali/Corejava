@@ -4,23 +4,20 @@ import java.util.Scanner;
 /**
  * 
  * @author sv22044
- *Factorial
+ *Fact
  *
  *
  */
-public class Factorial {
+
+public class Fact {
 	public static void main(String[] args) {
+		long j, fact = 1;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("enter a number");
-		int b = sc.nextInt();
-		System.out.println("factorial of" + b + "is" + factorial(b));
-	}
-
-	static int factorial(int b) {
-		int i, fact = 1;
-		for (i = 1; i <= b; i++) {
+		j = sc.nextLong();
+		for (int i = 1; i <= j; i++) {
 			fact = fact * i;
 		}
-		return fact;
+		System.out.println("factorial =" + fact);
 	}
 }
