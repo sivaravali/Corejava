@@ -42,8 +42,6 @@ public class DayName {
 			System.out.println("The value in the dayName: " + (this.dayName = null));
 
 		}
-		sc.close();
-
 	}
 
 	public static void main(String[] args) {
@@ -55,8 +53,6 @@ public class DayName {
 		System.out.println("Enter the number:");
 		int number = sc.nextInt();
 		obj.addToCurrentDay(number);
-		sc.close();
-
 	}
 
 	public void getNextDay() {
